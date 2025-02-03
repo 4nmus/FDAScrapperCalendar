@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Data</title>
+</head>
+<body>
+    <h1>FDACalendar Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Drug</th>
+                <th>Event</th>
+                <th>Outcome Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+                <tr>
+                    <td>{{ item.Name }}</td>
+                    <td>{{ item.Drug }}</td>
+                    <td>{{ item.Event }}</td>
+                    <td>{{ item.Date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
