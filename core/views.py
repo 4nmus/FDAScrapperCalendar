@@ -16,7 +16,11 @@ class ShowDataView(View):
         return render(request, 'core/main.html', {'data': data})
 
     def request_data(self, url):
-        response = requests.get(url)
+        headers = {"Accept": "*/*",
+                   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0"
+                   }
+
+        response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
